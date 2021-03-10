@@ -269,75 +269,77 @@ SOURCES += $$files(3rd-party/uchardet/*.cpp, false)
 HEADERS  += $$files(3rd-party/uchardet/*.h, false)
 
 # Add Scintilla.
-os2 {
-  SCINTILLA_DIR = $$PWD/3rd-party/scintilla-lt
-}
-else {
-  SCINTILLA_DIR = $$PWD/3rd-party/scintilla
-}
+#os2 {
+#  SCINTILLA_DIR = $$PWD/3rd-party/scintilla-lt
+#}
+#else {
+#  SCINTILLA_DIR = $$PWD/3rd-party/scintilla
+#}
 
-DEFINES *= SCINTILLA_DIR=$${SCINTILLA_DIR}/
-message($$MSG_PREFIX: Scintilla subdirectory: \"$$SCINTILLA_DIR\".)
+SCINTILLA_DIR = ../qscintilla/src
+DEFINES *= SCINTILLA_DIR=$$SCINTILLA_DIR/
+INCLUDEPATH += $$SCINTILLA_DIR
+#message($$MSG_PREFIX: Scintilla subdirectory: \"$$SCINTILLA_DIR\".)
 
-SOURCES += \
-    $$SCINTILLA_DIR/qt/ScintillaEdit/ScintillaEdit.cpp \
-    $$SCINTILLA_DIR/qt/ScintillaEdit/ScintillaDocument.cpp \
-    $$SCINTILLA_DIR/qt/ScintillaEditBase/PlatQt.cpp \
-    $$SCINTILLA_DIR/qt/ScintillaEditBase/ScintillaQt.cpp \
-    $$SCINTILLA_DIR/qt/ScintillaEditBase/ScintillaEditBase.cpp \
-    $$SCINTILLA_DIR/src/XPM.cxx \
-    $$SCINTILLA_DIR/src/ViewStyle.cxx \
-    $$SCINTILLA_DIR/src/UniqueString.cxx \
-    $$SCINTILLA_DIR/src/UniConversion.cxx \
-    $$SCINTILLA_DIR/src/Style.cxx \
-    $$SCINTILLA_DIR/src/Selection.cxx \
-    $$SCINTILLA_DIR/src/ScintillaBase.cxx \
-    $$SCINTILLA_DIR/src/RunStyles.cxx \
-    $$SCINTILLA_DIR/src/RESearch.cxx \
-    $$SCINTILLA_DIR/src/PositionCache.cxx \
-    $$SCINTILLA_DIR/src/PerLine.cxx \
-    $$SCINTILLA_DIR/src/MarginView.cxx \
-    $$SCINTILLA_DIR/src/LineMarker.cxx \
-    $$SCINTILLA_DIR/src/KeyMap.cxx \
-    $$SCINTILLA_DIR/src/Indicator.cxx \
-    $$SCINTILLA_DIR/src/ExternalLexer.cxx \
-    $$SCINTILLA_DIR/src/EditView.cxx \
-    $$SCINTILLA_DIR/src/Editor.cxx \
-    $$SCINTILLA_DIR/src/EditModel.cxx \
-    $$SCINTILLA_DIR/src/Document.cxx \
-    $$SCINTILLA_DIR/src/Decoration.cxx \
-    $$SCINTILLA_DIR/src/DBCS.cxx \
-    $$SCINTILLA_DIR/src/ContractionState.cxx \
-    $$SCINTILLA_DIR/src/CharClassify.cxx \
-    $$SCINTILLA_DIR/src/CellBuffer.cxx \
-    $$SCINTILLA_DIR/src/Catalogue.cxx \
-    $$SCINTILLA_DIR/src/CaseFolder.cxx \
-    $$SCINTILLA_DIR/src/CaseConvert.cxx \
-    $$SCINTILLA_DIR/src/CallTip.cxx \
-    $$SCINTILLA_DIR/src/AutoComplete.cxx \
-    $$SCINTILLA_DIR/lexlib/WordList.cxx \
-    $$SCINTILLA_DIR/lexlib/StyleContext.cxx \
-    $$SCINTILLA_DIR/lexlib/PropSetSimple.cxx \
-    $$SCINTILLA_DIR/lexlib/LexerSimple.cxx \
-    $$SCINTILLA_DIR/lexlib/LexerNoExceptions.cxx \
-    $$SCINTILLA_DIR/lexlib/LexerModule.cxx \
-    $$SCINTILLA_DIR/lexlib/LexerBase.cxx \
-    $$SCINTILLA_DIR/lexlib/DefaultLexer.cxx \
-    $$SCINTILLA_DIR/lexlib/CharacterSet.cxx \
-    $$SCINTILLA_DIR/lexlib/CharacterCategory.cxx \
-    $$SCINTILLA_DIR/lexlib/Accessor.cxx \
-    $$files($$SCINTILLA_DIR/lexers/*.cxx, false)
+#SOURCES += \
+#    $$SCINTILLA_DIR/qt/ScintillaEdit/ScintillaEdit.cpp \
+#    $$SCINTILLA_DIR/qt/ScintillaEdit/ScintillaDocument.cpp \
+#    $$SCINTILLA_DIR/qt/ScintillaEditBase/PlatQt.cpp \
+#    $$SCINTILLA_DIR/qt/ScintillaEditBase/ScintillaQt.cpp \
+#    $$SCINTILLA_DIR/qt/ScintillaEditBase/ScintillaEditBase.cpp \
+#    $$SCINTILLA_DIR/src/XPM.cxx \
+#    $$SCINTILLA_DIR/src/ViewStyle.cxx \
+#    $$SCINTILLA_DIR/src/UniqueString.cxx \
+#    $$SCINTILLA_DIR/src/UniConversion.cxx \
+#    $$SCINTILLA_DIR/src/Style.cxx \
+#    $$SCINTILLA_DIR/src/Selection.cxx \
+#    $$SCINTILLA_DIR/src/ScintillaBase.cxx \
+#    $$SCINTILLA_DIR/src/RunStyles.cxx \
+#    $$SCINTILLA_DIR/src/RESearch.cxx \
+#    $$SCINTILLA_DIR/src/PositionCache.cxx \
+#    $$SCINTILLA_DIR/src/PerLine.cxx \
+#    $$SCINTILLA_DIR/src/MarginView.cxx \
+#    $$SCINTILLA_DIR/src/LineMarker.cxx \
+#    $$SCINTILLA_DIR/src/KeyMap.cxx \
+#    $$SCINTILLA_DIR/src/Indicator.cxx \
+#    $$SCINTILLA_DIR/src/ExternalLexer.cxx \
+#    $$SCINTILLA_DIR/src/EditView.cxx \
+#    $$SCINTILLA_DIR/src/Editor.cxx \
+#    $$SCINTILLA_DIR/src/EditModel.cxx \
+#    $$SCINTILLA_DIR/src/Document.cxx \
+#    $$SCINTILLA_DIR/src/Decoration.cxx \
+#    $$SCINTILLA_DIR/src/DBCS.cxx \
+#    $$SCINTILLA_DIR/src/ContractionState.cxx \
+#    $$SCINTILLA_DIR/src/CharClassify.cxx \
+#    $$SCINTILLA_DIR/src/CellBuffer.cxx \
+#    $$SCINTILLA_DIR/src/Catalogue.cxx \
+#    $$SCINTILLA_DIR/src/CaseFolder.cxx \
+#    $$SCINTILLA_DIR/src/CaseConvert.cxx \
+#    $$SCINTILLA_DIR/src/CallTip.cxx \
+#    $$SCINTILLA_DIR/src/AutoComplete.cxx \
+#    $$SCINTILLA_DIR/lexlib/WordList.cxx \
+#    $$SCINTILLA_DIR/lexlib/StyleContext.cxx \
+#    $$SCINTILLA_DIR/lexlib/PropSetSimple.cxx \
+#    $$SCINTILLA_DIR/lexlib/LexerSimple.cxx \
+#    $$SCINTILLA_DIR/lexlib/LexerNoExceptions.cxx \
+#    $$SCINTILLA_DIR/lexlib/LexerModule.cxx \
+#    $$SCINTILLA_DIR/lexlib/LexerBase.cxx \
+#    $$SCINTILLA_DIR/lexlib/DefaultLexer.cxx \
+#    $$SCINTILLA_DIR/lexlib/CharacterSet.cxx \
+#    $$SCINTILLA_DIR/lexlib/CharacterCategory.cxx \
+#    $$SCINTILLA_DIR/lexlib/Accessor.cxx \
+#    $$files($$SCINTILLA_DIR/lexers/*.cxx, false)
 
-HEADERS  += \
-    $$SCINTILLA_DIR/qt/ScintillaEdit/ScintillaEdit.h \
-    $$SCINTILLA_DIR/qt/ScintillaEdit/ScintillaDocument.h \
-    $$SCINTILLA_DIR/qt/ScintillaEditBase/ScintillaEditBase.h \
-    $$SCINTILLA_DIR/qt/ScintillaEditBase/ScintillaQt.h
+#HEADERS  += \
+#    $$SCINTILLA_DIR/qt/ScintillaEdit/ScintillaEdit.h \
+#    $$SCINTILLA_DIR/qt/ScintillaEdit/ScintillaDocument.h \
+#    $$SCINTILLA_DIR/qt/ScintillaEditBase/ScintillaEditBase.h \
+#    $$SCINTILLA_DIR/qt/ScintillaEditBase/ScintillaQt.h
 
-INCLUDEPATH +=  $$SCINTILLA_DIR/qt/ScintillaEditBase \
-                $$SCINTILLA_DIR/include \
-                $$SCINTILLA_DIR/src \
-                $$SCINTILLA_DIR/lexlib
+#INCLUDEPATH +=  $$SCINTILLA_DIR/qt/ScintillaEditBase \
+#                $$SCINTILLA_DIR/include \
+#                $$SCINTILLA_DIR/src \
+#                $$SCINTILLA_DIR/lexlib
 
 DEFINES *= SCINTILLA_QT=1 MAKING_LIBRARY=1 SCI_LEXER=1 _CRT_SECURE_NO_DEPRECATE=1
 
@@ -408,3 +410,7 @@ mac {
   QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.8
   LIBS += -framework AppKit
 }
+
+#INCLUDEPATH += $$SCINTILLA_DIR
+
+#include($$PWD/3rd-party/QScintilla_src-2.12.0/src/qscintilla.pri)

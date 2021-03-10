@@ -901,7 +901,47 @@ QList<Lexer> SyntaxHighlighting::lexers() {
         QSL("application/xml-sitemap"), QSL("application/vnd.google-earth.kml+xml")})
       << Lexer(QSL("YAML"), QStringList {
       QSL("yml"), QSL("yaml")
-    }, SCLEX_YAML);
+    }, SCLEX_YAML)
+
+      << Lexer(QSL("OpenFOAM"),
+             QStringList {QSL("foam")},
+               SCLEX_OpenFOAM, {
+      {SCE_C_DEFAULT, SyntaxColorTheme::StyleComponents::Default},
+      {SCE_C_COMMENT, SyntaxColorTheme::StyleComponents::Comment},
+      {SCE_C_COMMENTDOC, SyntaxColorTheme::StyleComponents::Comment},
+      {SCE_C_COMMENTDOCKEYWORD, SyntaxColorTheme::StyleComponents::Comment},
+      {SCE_C_COMMENTDOCKEYWORDERROR, SyntaxColorTheme::StyleComponents::Error},
+      {SCE_C_COMMENTLINE, SyntaxColorTheme::StyleComponents::Comment},
+      {SCE_C_COMMENTLINEDOC, SyntaxColorTheme::StyleComponents::Comment},
+      {SCE_C_NUMBER, SyntaxColorTheme::StyleComponents::Number},
+      {SCE_C_WORD, SyntaxColorTheme::StyleComponents::Keyword},
+      {SCE_C_WORD2, SyntaxColorTheme::StyleComponents::Keyword},
+      {SCE_C_STRING, SyntaxColorTheme::StyleComponents::String},
+      {SCE_C_STRINGEOL, SyntaxColorTheme::StyleComponents::String},
+      {SCE_C_STRINGRAW, SyntaxColorTheme::StyleComponents::String},
+      {SCE_C_CHARACTER, SyntaxColorTheme::StyleComponents::String},
+      {SCE_C_PREPROCESSOR, SyntaxColorTheme::StyleComponents::Preprocessor},
+      {SCE_C_OPERATOR, SyntaxColorTheme::StyleComponents::Operator},
+      {SCE_C_IDENTIFIER, SyntaxColorTheme::StyleComponents::Identifier},
+      {SCE_C_VERBATIM, SyntaxColorTheme::StyleComponents::PlainData},
+      {SCE_C_REGEX, SyntaxColorTheme::StyleComponents::Regex},
+      {SCE_C_GLOBALCLASS, SyntaxColorTheme::StyleComponents::Keyword},
+      {SCE_C_PREPROCESSORCOMMENT, SyntaxColorTheme::StyleComponents::Comment},
+      {SCE_C_PREPROCESSORCOMMENTDOC, SyntaxColorTheme::StyleComponents::Keyword}
+    }, {QSL("dict/OpenFOAM")}, {
+      {0, "alignas alignof and and_eq asm auto bitand bitor bool break case catch char "
+          "char16_t char32_t class compl const constexpr const_cast continue decltype default "
+          "delete do double dynamic_cast else enum explicit export extern false final float for "
+          "friend goto if inline int long mutable namespace new noexcept not not_eq nullptr operator "
+          "or or_eq override private protected public register reinterpret_cast return short signed "
+          "sizeof static static_assert static_cast struct switch template this thread_local throw true "
+          "try typedef typeid typename union unsigned using virtual void volatile wchar_t while xor xor_eq"
+          ///add for openFOAM
+          " version format object "
+          "dimensions internalField boundaryField vertices blocks"
+      }
+    })
+         ;
   }
 
   return m_lexers;

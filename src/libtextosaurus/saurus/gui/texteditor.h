@@ -6,7 +6,8 @@
 #include "definitions/definitions.h"
 
 // *INDENT-OFF*
-#include PATH(SCINTILLA_DIR,qt/ScintillaEdit/ScintillaEdit.h)
+#include PATH(SCINTILLA_DIR,Qsci/qsciscintilla.h)
+#include PATH(SCINTILLA_DIR,../scintilla/include/Scintilla.h)
 
 // *INDENT-ON*
 
@@ -21,7 +22,7 @@
 class TextApplication;
 class QFileSystemWatcher;
 
-class TEXTOSAURUS_DLLSPEC TextEditor : public ScintillaEdit {
+class TEXTOSAURUS_DLLSPEC TextEditor : public QsciScintilla {
   Q_OBJECT
 
   public:

@@ -853,8 +853,8 @@ void TextEditor::setSettingsDirty(bool settings_dirty) {
 }
 
 void TextEditor::setReadOnly(bool read_only) {
-  if (read_only != readOnly()) {
-    ScintillaEdit::setReadOnly(read_only);
+  if (read_only != isReadOnly()) {
+    QsciScintilla::setReadOnly(read_only);
     emit readOnlyChanged(read_only);
   }
 }

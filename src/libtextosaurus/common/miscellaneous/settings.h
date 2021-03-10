@@ -11,7 +11,7 @@
 #include "common/miscellaneous/settingsproperties.h"
 
 // *INDENT-OFF*
-#include PATH(SCINTILLA_DIR,include/Scintilla.h)
+#include PATH(SCINTILLA_DIR, ../scintilla/include/Scintilla.h)
 
 // *INDENT-ON*
 

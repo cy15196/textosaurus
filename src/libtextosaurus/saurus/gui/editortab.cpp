@@ -27,7 +27,7 @@ EditorTab::EditorTab(TextApplication* text_app, TextEditor* editor)
     emit iconChanged(m_icon);
   });
   connect(m_editor, &TextEditor::savePointChanged, this, [this]() {
-    updateIcon(m_editor->readOnly());
+    updateIcon(m_editor->isReadOnly());
     updateTitleFromEditor();
 
     emit titleChanged(m_title, m_toolTip);

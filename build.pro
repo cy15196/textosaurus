@@ -29,9 +29,14 @@
 TEMPLATE = subdirs
 
 CONFIG += ordered
-SUBDIRS = libtextosaurus textosaurus
+SUBDIRS = libtextosaurus textosaurus qscintilla
+
+qscintilla.subdir = src/qscintilla
 
 libtextosaurus.subdir  = src/libtextosaurus
+libtextosaurus.depends = qscintilla
 
 textosaurus.subdir  = src/textosaurus
 textosaurus.depends = libtextosaurus
+
+

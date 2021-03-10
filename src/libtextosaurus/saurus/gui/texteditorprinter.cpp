@@ -5,7 +5,7 @@
 #include "definitions/definitions.h"
 
 // *INDENT-OFF*
-#include PATH(SCINTILLA_DIR,qt/ScintillaEdit/ScintillaEdit.h)
+#include PATH(SCINTILLA_DIR,Qsci/Qscintilla.h)
 
 // *INDENT-ON*
 
